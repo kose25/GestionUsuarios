@@ -1,0 +1,56 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Usuario";
+    Layout = "~/Pages/Shared/_DevExtremeLayout.cshtml";
+}
+@Html.AntiForgeryToken()
+@using DevExtreme.AspNet.Mvc
+@using UsuariosCore.Entidades
+
+<div class="mt-4 mx-5">
+    <h1>Usuario</h1>
+    <hr>
+    <p>Formulario para registrar Usuario</p>
+    <div class="card">
+        <div class="card-body">
+            @(Html.DevExtreme().Form<Usuarios>()
+            .ID("FormUsuario")
+            .ColCount(12)
+            .Items(items=>{
+
+                items.AddSimpleFor(m=>m.Nombre)
+                .ValidationRules(v=>v.AddRequired().Message("El nombre es requerido"))
+                .ValidationRules(q=>q.AddStringLength().Min(1).Max(100).Message("maximo 100")).IsRequired(true)
+                .Label(f=>f.Location(FormLabelLocation.Top)
+                .Text("Nombre"))
+                .ColSpan(6)
+                .Editor(d=>d.TextBox().MaxLength(100).Placeholder("ingrese el nombre"));
+
+                items.AddSimpleFor(g=>g.Sexo).ColSpan(6)
+                .ValidationRules(r=>r.AddRequired().Message("este campo es requerido")).IsRequired(true)
+                .Label(d=>d.Location(FormLabelLocation.Top).Text("Sexo"))
+                .Editor(f=>f.SelectBox().Placeholder("seleccione el sexo").DataSource(ds=>ds.Array().Data(new List<string>() {
+                    "M","F"
+                    })));                
+
+                items.AddSimpleFor(f=>f.FechaNacimiento).ColSpan(6)
+                .ValidationRules(r=>r.AddRequired().Message("la fecha es obligatoria")).IsRequired(true)
+                .Label(d=>d.Location(FormLabelLocation.Top).Text("Fecha de naciemiento"))
+                .Editor(f=>f.DateBox().Max(DateTime.Now).DateSerializationFormat("yyyy-MM-dd").DisplayFormat("dd/MM/yyy").Placeholder("Ingrese fecha"));
+
+                items.AddButton().ColSpan(6)
+                .ButtonOptions(s=>s.Icon("save").ID("btnsalvar")
+                .OnClick("Salvar")
+                .Type(ButtonType.Default).Text("Guardar")).ColSpan(3)
+                .VerticalAlignment(VerticalAlignment.Bottom)
+                .HorizontalAlignment(HorizontalAlignment.Left);
+
+            }))
+        </div>
+    </div>
+</div>
+
+
+
+<script src="~/js/Usuario.js"></script>

@@ -1,0 +1,16 @@
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosInfrastructure\bin\Debug\netcoreapp2.1\UsuariosInfrastructure.deps.json
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosInfrastructure\bin\Debug\netcoreapp2.1\UsuariosInfrastructure.dll
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosInfrastructure\bin\Debug\netcoreapp2.1\UsuariosInfrastructure.pdb
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosInfrastructure\bin\Debug\netcoreapp2.1\UsuariosCore.dll
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosInfrastructure\bin\Debug\netcoreapp2.1\UsuariosCore.pdb
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosInfrastructure\obj\Debug\netcoreapp2.1\UsuariosInfrastructure.csproj.AssemblyReference.cache
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosInfrastructure\obj\Debug\netcoreapp2.1\UsuariosInfrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosInfrastructure\obj\Debug\netcoreapp2.1\UsuariosInfrastructure.AssemblyInfoInputs.cache
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosInfrastructure\obj\Debug\netcoreapp2.1\UsuariosInfrastructure.AssemblyInfo.cs
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosInfrastructure\obj\Debug\netcoreapp2.1\UsuariosInfrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosInfrastructure\obj\Debug\netcoreapp2.1\UsuariosInfrastructure.csproj.CopyComplete
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosInfrastructure\obj\Debug\netcoreapp2.1\UsuariosInfrastructure.dll
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosInfrastructure\obj\Debug\netcoreapp2.1\UsuariosInfrastructure.pdb
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosInfrastructure\bin\Debug\netcoreapp2.1\UsuariosInfrastructure.runtimeconfig.json
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosInfrastructure\bin\Debug\netcoreapp2.1\UsuariosInfrastructure.runtimeconfig.dev.json
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosInfrastructure\obj\Debug\netcoreapp2.1\UsuariosInfrastructure.genruntimeconfig.cache

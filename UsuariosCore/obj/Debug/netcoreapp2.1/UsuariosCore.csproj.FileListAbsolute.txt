@@ -1,0 +1,10 @@
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosCore\bin\Debug\netcoreapp2.1\UsuariosCore.deps.json
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosCore\bin\Debug\netcoreapp2.1\UsuariosCore.dll
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosCore\bin\Debug\netcoreapp2.1\UsuariosCore.pdb
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosCore\obj\Debug\netcoreapp2.1\UsuariosCore.csproj.AssemblyReference.cache
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosCore\obj\Debug\netcoreapp2.1\UsuariosCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosCore\obj\Debug\netcoreapp2.1\UsuariosCore.AssemblyInfoInputs.cache
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosCore\obj\Debug\netcoreapp2.1\UsuariosCore.AssemblyInfo.cs
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosCore\obj\Debug\netcoreapp2.1\UsuariosCore.csproj.CoreCompileInputs.cache
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosCore\obj\Debug\netcoreapp2.1\UsuariosCore.dll
+C:\Users\Jose\Documents\vaino usuarios prueba\UsuariosCore\obj\Debug\netcoreapp2.1\UsuariosCore.pdb

@@ -1,0 +1,97 @@
+﻿@page
+@model GestionUsuarios.Pages.UsuarioConsultaModel
+@{
+    ViewData["Title"] = "Usuario Consulta";
+    Layout = "~/Pages/Shared/_DevExtremeLayout.cshtml";
+}
+@Html.AntiForgeryToken()
+@using DevExtreme.AspNet.Mvc
+@using UsuariosCore.Entidades
+
+<div class="mt-4 mx-5">
+    <h1>Usuario Consulta</h1>
+    <hr>
+    <p>Grid de consulta de usuarios registrados</p>
+    <div class="card">
+        <div class="card-body">       
+
+            @(Html.DevExtreme().DataGrid<Usuarios>()
+            .ID("TablaUsuarios")
+            .ShowRowLines(true)
+            .RemoteOperations(d=>d.Paging(true))
+            .RowAlternationEnabled(true)
+            .ShowBorders(true)
+            .ShowColumnLines(true)
+            .ShowRowLines(true)
+            .FilterRow(q=>q.Visible(true))
+            .AllowColumnReordering(true)
+            .AllowColumnResizing(true)
+            .ColumnAutoWidth(true)
+            .RemoteOperations(c => c.Paging(true).Filtering(true))
+            .Paging(paging => paging.PageSize(10))
+            .Pager(pager =>
+            {
+                pager.ShowPageSizeSelector(true);
+                pager.ShowNavigationButtons(true);
+                pager.Visible(true);
+                pager.AllowedPageSizes(new List<int>
+                { 5, 10, 20 });
+                pager.ShowInfo(true);
+            })
+            .OnRowClick("SeleccionarRegistro")
+            .SearchPanel(d=>d.Visible(true))
+            .DataSource(s=>s.RemoteController().LoadUrl(Url.Page("UsuarioConsulta", "ListaUsuarios")))
+            .Columns(s=>{
+                s.AddFor(q=>q.Nombre);
+                s.AddFor(q=>q.Sexo);
+                s.AddFor(q=>q.FechaNacimiento);
+                s.Add().Visible(true).Caption("Acciones").Type(GridCommandColumnType.Buttons).Buttons(b=>{
+                    b.Add().Icon("edit").Hint("editar").OnClick("EditarUsuarioFromGrid");
+                    b.Add().Icon("remove").Hint("Eliminar").OnClick("EliminarUsuario");
+                });
+            }))
+
+            <div id="divformulario" style="display:none">
+                @(Html.DevExtreme().Button().OnClick("esconderFormulario").Text("Volver").Icon("arrowleft").Type(ButtonType.Default))
+                @(Html.DevExtreme().Form<Usuarios>()
+                .ID("FormUsuarioEdit")
+                .ColCount(12)
+                .Items(items=>{
+
+                    items.AddSimpleFor(m=>m.Nombre)
+                    .ValidationRules(v=>v.AddRequired().Message("El nombre es requerido"))
+                    .ValidationRules(q=>q.AddStringLength().Min(1).Max(100).Message("maximo 100")).IsRequired(true)
+                    .Label(f=>f.Location(FormLabelLocation.Top)
+                    .Text("Nombre"))
+                    .ColSpan(6)
+                    .Editor(d=>d.TextBox().MaxLength(100).Placeholder("ingrese el nombre"));
+
+                    items.AddSimpleFor(g=>g.Sexo).ColSpan(6)
+                    .ValidationRules(r=>r.AddRequired().Message("este campo es requerido")).IsRequired(true)
+                    .Label(d=>d.Location(FormLabelLocation.Top).Text("Sexo"))
+                    .Editor(f=>f.SelectBox().Placeholder("seleccione el sexo").DataSource(ds=>ds.Array().Data(new List<string>() {
+                        "M","F"
+                        })));                
+
+                    items.AddSimpleFor(f=>f.FechaNacimiento).ColSpan(6)
+                    .ValidationRules(r=>r.AddRequired().Message("la fecha es obligatoria")).IsRequired(true)
+                    .Label(d=>d.Location(FormLabelLocation.Top).Text("Fecha de naciemiento"))
+                    .Editor(f=>f.DateBox().Max(DateTime.Now).DateSerializationFormat("yyyy-MM-dd").DisplayFormat("dd/MM/yyy").Placeholder("Ingrese fecha"));
+
+                    items.AddEmpty().ColSpan(6);
+                    items.AddButton()
+                    .ButtonOptions(s=>s.Icon("save").ID("btnsalvar")
+                    .OnClick("Editar")
+                    .Type(ButtonType.Default).Text("Guardar")).ColSpan(3)
+                    .HorizontalAlignment(HorizontalAlignment.Left)
+                    .VerticalAlignment(VerticalAlignment.Bottom);
+
+                }))
+    
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/js/Usuario.js"></script>
